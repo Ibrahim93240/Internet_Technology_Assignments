@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+        input[type="text"], input[type="password"], input[type="radio"] {
+            width: 95%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="radio"] {
+            width: auto;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+        .error {
+            color: red;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Registration Form</h2>
+        <form id="registrationForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email">
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+
+            <label>Gender:</label>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label><br><br>
+
+            <input type="submit" value="Register">
+        </form>
+        <p id="errorMessage" class="error"></p>
+    </div>
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+            var gender = document.querySelector('input[name="gender"]:checked');
+
+            var errorMessage = '';
+
+            if (!name) {
+                errorMessage += 'Name is required. ';
+            }
+            if (!email) {
+                errorMessage += 'Email is required. ';
+            } else if (!/\S+@\S+\.\S+/.test(email)) {
+                errorMessage += 'Email format is invalid. ';
+            }
+            if (!password) {
+                errorMessage += 'Password is required. ';
+            }
+            if (!gender) {
+                errorMessage += 'Gender is required. ';
+            }
+
+            if (errorMessage) {
+                document.getElementById('errorMessage').textContent = errorMessage;
+            } else {
+                document.getElementById('errorMessage').textContent = '';
+                alert('Form submitted successfully!');
+                // Here you can add code to submit the form data to the server
+            }
+        });
+    </script>
+</body>
+</html>

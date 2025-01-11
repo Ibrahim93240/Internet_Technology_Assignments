@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Visibility</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #toggleButton {
+            padding: 10px;
+            background-color: lightgreen;
+            cursor: pointer;
+        }
+        #toggleElement {
+            display: none;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: lightblue;
+        }
+        #image {
+            width: 200px;
+            aspect-ratio: 1/1;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button id="toggleButton">Toggle Visibility</button>
+    <div id="toggleElement">
+        <img id="image" src="https://i.pinimg.com/474x/f2/0f/6a/f20f6a04e5983a4d83b9c506683b6280.jpg" alt="Arpan Pal">
+        <h1>My Name is Arpan Pal</h1>
+        <h2>I am a web developer</h2>
+    </div>
+
+    <script>
+        document.getElementById('toggleButton').addEventListener('click', function() {
+            var element = document.getElementById('toggleElement');
+            if (element.style.display === 'none') {
+                element.style.display = 'block';
+            } else {
+                element.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Mode Toggle</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        #just_img {
+            width: 500px;
+            aspect-ratio: 1/1;
+            border-radius: 10px;
+            box-shadow: 10px 5px 5px black;
+        }
+        .light-mode {
+            background-color: white;
+            color: black;
+        }
+        .dark-mode {
+            background-color: black;
+            color: white;
+        }
+        .toggle-button {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body class="light-mode">
+    <button class="toggle-button" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+
+    <h1>Welcome to My Webpage</h1>
+    <p>This is a sample webpage with a dark mode toggle button.</p>
+    <img id="just_img" src="https://i.pinimg.com/236x/ea/1d/50/ea1d50fff20c4fa3b570d77f2104dbed.jpg" alt="Just a Image">
+
+    <script>
+        function toggleDarkMode() {
+            const body = document.body;
+            body.classList.toggle('dark-mode');
+            body.classList.toggle('light-mode');
+        }
+    </script>
+</body>
+</html>

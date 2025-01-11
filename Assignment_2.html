@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        .error { 
+            color: red; 
+        }
+        body{
+            background-color: aqua;
+            padding-top: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #name, #email{
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        #Registerbtn{
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+        }
+        #Registerbtn:hover{
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+   
+    <form id="registrationForm">
+        <h2>Registration Form</h2>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your Name"><br><br>
+        
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" placeholder="Enter valid Email"><br><br>
+        
+        <input id="Registerbtn" type="submit" value="Register">
+        <p id="errorMessages" class="error"></p>
+    </form>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>

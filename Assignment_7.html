@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        
+        .login-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        
+        .login-container h2 {
+            margin-bottom: 20px;
+        }
+        
+        .login-container label {
+            display: block;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+        
+        .login-container input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        
+        .login-container button:hover {
+            background-color: #0056b3;
+        }
+        
+        .error-message {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Login</button>
+            <p id="error-message" class="error-message"></p>
+        </form>
+    </div>
+    <script>
+                document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+        
+            const predefinedUsername = 'user';
+            const predefinedPassword = 'password';
+        
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('error-message');
+        
+            if (username === predefinedUsername && password === predefinedPassword) {
+                errorMessage.textContent = '';
+                alert('Login successful!');
+            } else {
+                errorMessage.textContent = 'Invalid username or password.';
+            }
+        });
+    </script>
+</body>
+</html>
